@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\AlbumController;
-use App\Http\Controllers\ImageManipulationController;
+use App\Http\Controllers\V1\AlbumController;
+use App\Http\Controllers\V1\ImageManipulationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
