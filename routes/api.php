@@ -21,8 +21,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::prefix('v1')->group(function() {
-    Route::resource('album', AlbumController::class);
-    Route::post('image/resize', [ImageManipulationController::class, 'resize']);
+    Route::middleware('auth:sanctum')->group(function () {
+        Route::apiResource('album', AlbumController::class);
+        Route::post('image/resize', [ImageManipulationController::class, 'resize']);
+    });
     Route::post('auth/register', [\App\Http\Controllers\AuthController::class, 'register']);
     Route::post('auth/login', [\App\Http\Controllers\AuthController::class, 'login']);
 });
