@@ -3,7 +3,7 @@
 ## Demo
 Coming soon...
 
-## Installation for development
+## Basic installation steps 
 Before you start the installation process you need to have **installed composer**
 
 1. Clone the project
@@ -17,7 +17,36 @@ Before you start the installation process you need to have **installed composer*
    2. Then create file `database/database.sqlite`
 6. Run `php artisan key:generate --ansi`
 7. Run `php artisan migrate`
-8. Run `php artisan serve` which will start the server at http://localhost:8000
+
+### Installing locally for development
+Run `php artisan serve` which will start the server at http://localhost:8000 <br>
+
+
+### Installing on production
+1. Create a virtual host file
+2. Enable it
+3. Reload apache
+
+Virtual host template.
+```apacheconf
+<VirtualHost *:80>
+    ServerName yourproductiondomain.com
+    ServerAlias www.yourproductiondomain.com
+    DocumentRoot /project-installation-path/public_html
+
+    <Directory "/project-installation-path/public_html">
+        Options -Indexes +FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog /path-to-logs-folder/error.log
+    CustomLog /path-to-logs-folder/access.log combined
+</VirtualHost>
+```
+
+## Installation for production
+
 
 ## Contributing
 
