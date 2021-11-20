@@ -36,7 +36,7 @@ class DashboardController extends Controller
     public function createToken(Request $request)
     {
         $request->validate([
-            'name' => 'required|min:8'
+            'name' => 'required'
         ]);
         $tokenName = $request->post('name');
 
