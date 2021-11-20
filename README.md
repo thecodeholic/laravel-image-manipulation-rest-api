@@ -44,8 +44,16 @@ Virtual host template.
     CustomLog /path-to-logs-folder/access.log combined
 </VirtualHost>
 ```
-
-## Installation for production
+If you installed the project using apache and have any issues regarding permissions when installing on production,
+do the following. 
+1. Add the project owner user in `www-data` group
+    ```shell
+    sudo usermod -a -G www-data project-owner-user
+    ```
+2. Change the owner of `storage` folder into `www-data` user
+    ```shell
+    chown www-data:www-data /home/lobiimages/html/storage/ -R
+    ```
 
 
 ## Contributing
