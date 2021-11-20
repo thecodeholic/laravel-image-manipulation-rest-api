@@ -4,6 +4,7 @@ namespace App\Http\Controllers\V1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ResizeImageRequest;
+use App\Http\Resources\V1\ImageManipulationResource;
 use App\Models\ImageManipulation;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
@@ -89,12 +90,9 @@ class ImageManipulationController extends Controller
 
         $data['output_path'] = $dir . $resizedFilename;
 
-        ImageManipulation::create($data);
+        $imageManipulation = ImageManipulation::create($data);
 
-        return [
-            'original' => URL::to($data['path']),
-            'resized' => URL::to($data['output_path'])
-        ];
+        return new ImageManipulationResource($imageManipulation);
     }
 
     /**
