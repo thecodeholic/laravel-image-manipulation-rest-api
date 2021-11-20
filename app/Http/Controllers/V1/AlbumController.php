@@ -75,5 +75,6 @@ class AlbumController extends Controller
             return abort(403, 'Unauthorized action.');
         }
         $album->delete();
+        return response('', 204);
     }
 }

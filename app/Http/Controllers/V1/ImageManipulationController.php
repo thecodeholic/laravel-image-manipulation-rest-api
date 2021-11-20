@@ -43,7 +43,7 @@ class ImageManipulationController extends Controller
             'data' => json_encode($all),
             'user_id' => $request->user()->id
         ];
-        if (isset($all['album_id'])){
+        if (isset($all['album_id'])) {
             $data['album_id'] = $all['album_id'];
         }
         $dir = 'images/' . Str::random() . '/';
@@ -90,9 +90,13 @@ class ImageManipulationController extends Controller
      * @param \App\Models\ImageManipulation $imageManipulation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ImageManipulation $imageManipulation)
+    public function destroy(Request $request, ImageManipulation $image)
     {
-        //
+        if ($image->user_id !== $request->user()->id) {
+            return abort(403, 'Unauthorized action.');
+        }
+        $image->delete();
+        return response('', 204);
     }
 
     protected function getWidthAndHeight($w, $h, $originalPath)
