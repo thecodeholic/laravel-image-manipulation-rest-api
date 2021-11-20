@@ -27,6 +27,4 @@ Route::prefix('v1')->group(function() {
         Route::post('image/resize', [ImageManipulationController::class, 'resize']);
         Route::delete('image/{image}', [ImageManipulationController::class, 'destroy']);
     });
-    Route::post('auth/register', [\App\Http\Controllers\AuthController::class, 'register']);
-    Route::post('auth/login', [\App\Http\Controllers\AuthController::class, 'login']);
 });
