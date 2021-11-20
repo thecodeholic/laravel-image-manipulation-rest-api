@@ -23,6 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::prefix('v1')->group(function() {
     Route::middleware('auth:sanctum')->group(function () {
         Route::apiResource('album', AlbumController::class);
+        Route::get('image', [ImageManipulationController::class, 'index']);
         Route::post('image/resize', [ImageManipulationController::class, 'resize']);
     });
     Route::post('auth/register', [\App\Http\Controllers\AuthController::class, 'register']);

@@ -17,7 +17,7 @@ class AlbumController extends Controller
      */
     public function index(Request $request)
     {
-        return AlbumResource::collection(( (Album::where('user_id', $request->user()->id)->paginate())));
+        return AlbumResource::collection(Album::where('user_id', $request->user()->id)->paginate());
     }
 
     /**

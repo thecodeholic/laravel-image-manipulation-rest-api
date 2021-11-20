@@ -18,22 +18,11 @@ class ImageManipulationController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \App\Http\Requests\StoreImageManipulationRequest $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreImageManipulationRequest $request)
-    {
-        //
+        return ImageManipulationResource::collection(ImageManipulation::where('user_id', $request->user()->id)->paginate());
     }
 
     /**
@@ -93,18 +82,6 @@ class ImageManipulationController extends Controller
         $imageManipulation = ImageManipulation::create($data);
 
         return new ImageManipulationResource($imageManipulation);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\ImageManipulation $imageManipulation
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, ImageManipulation $imageManipulation)
-    {
-        //
     }
 
     /**
