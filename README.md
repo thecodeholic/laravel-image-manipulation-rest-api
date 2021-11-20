@@ -3,6 +3,11 @@
 ## Demo
 Coming soon...
 
+## Prerequisites
+
+#### PHP Extensions
+`php-mbstring php-dom php-intl php-curl php-mysql php-gd`
+
 ## Basic installation steps 
 Before you start the installation process you need to have **installed composer**
 
