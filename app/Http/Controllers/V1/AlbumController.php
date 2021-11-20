@@ -41,7 +41,7 @@ class AlbumController extends Controller
      */
     public function show(Request $request, Album $album)
     {
-        if ($album->user_id !== $request->user()->id) {
+        if ($album->user_id != $request->user()->id) {
             return abort(403, 'Unauthorized action.');
         }
         return new AlbumResource($album);
@@ -56,7 +56,7 @@ class AlbumController extends Controller
      */
     public function update(AlbumRequest $request, Album $album)
     {
-        if ($album->user_id !== $request->user()->id) {
+        if ($album->user_id != $request->user()->id) {
             return abort(403, 'Unauthorized action.');
         }
         $album->update($request->all());
@@ -71,7 +71,7 @@ class AlbumController extends Controller
      */
     public function destroy(Request $request, Album $album)
     {
-        if ($album->user_id !== $request->user()->id) {
+        if ($album->user_id != $request->user()->id) {
             return abort(403, 'Unauthorized action.');
         }
         $album->delete();

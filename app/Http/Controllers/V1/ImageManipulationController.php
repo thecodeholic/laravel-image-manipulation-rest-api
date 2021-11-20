@@ -32,7 +32,7 @@ class ImageManipulationController extends Controller
      */
     public function getByAlbum(Request $request, Album $album)
     {
-        if ($album->user_id !== $request->user()->id) {
+        if ($album->user_id != $request->user()->id) {
             return abort(403, 'Unauthorized action.');
         }
 
@@ -61,6 +61,10 @@ class ImageManipulationController extends Controller
             'user_id' => $request->user()->id
         ];
         if (isset($all['album_id'])) {
+            $album = Album::find($all['album_id']);
+            if ($album->user_id != $request->user()->id){
+                return abort(403, 'Unauthorized');
+            }
             $data['album_id'] = $all['album_id'];
         }
         $dir = 'images/' . Str::random() . '/';
@@ -109,7 +113,7 @@ class ImageManipulationController extends Controller
      */
     public function destroy(Request $request, ImageManipulation $image)
     {
-        if ($image->user_id !== $request->user()->id) {
+        if ($image->user_id != $request->user()->id) {
             return abort(403, 'Unauthorized action.');
         }
         $image->delete();
