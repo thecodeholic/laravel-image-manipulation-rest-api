@@ -50,9 +50,10 @@ do the following.
     ```shell
     sudo usermod -a -G www-data project-owner-user
     ```
-2. Change the owner of `storage` folder into `www-data` user
+2. Change the owner of several folders into `www-data` user
     ```shell
-    chown www-data:www-data /home/lobiimages/html/storage/ -R
+    chown www-data:www-data storage/ -R
+    chown www-data:www-data public/images
     ```
 
 
