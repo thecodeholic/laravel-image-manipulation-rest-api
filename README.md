@@ -32,9 +32,9 @@ Virtual host template.
 <VirtualHost *:80>
     ServerName yourproductiondomain.com
     ServerAlias www.yourproductiondomain.com
-    DocumentRoot /project-installation-path/public_html
+    DocumentRoot /project-installation-path/public
 
-    <Directory "/project-installation-path/public_html">
+    <Directory "/project-installation-path/public`">
         Options -Indexes +FollowSymLinks
         AllowOverride All
         Require all granted
