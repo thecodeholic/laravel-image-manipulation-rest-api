@@ -27,7 +27,8 @@ class ResizeImageRequest extends FormRequest
         $rules = [
             'image' => ['required'],
             'w' => ['required', 'regex:/^\d+(\.\d+)?%?$/'],
-            'h' => 'regex:/^\d+(\.\d+)?%?$/'
+            'h' => 'regex:/^\d+(\.\d+)?%?$/',
+            'album_id' => 'exists:\App\Models\Album,id'
         ];
         $all = $this->all();
         if (isset($all['image']) && $all['image'] instanceof UploadedFile) {

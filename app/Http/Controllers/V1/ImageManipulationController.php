@@ -48,8 +48,14 @@ class ImageManipulationController extends Controller
         /** @var UploadedFile|string $image */
         $image = $all['image'];
         unset($all['image']);
-        $data['type'] = ImageManipulation::TYPE_RESIZE;
-        $data['data'] = json_encode($all);
+        $data = [
+            'type' => ImageManipulation::TYPE_RESIZE,
+            'data' => json_encode($all),
+            'user_id' => $request->user()->id
+        ];
+        if (isset($all['album_id'])){
+            $data['album_id'] = $all['album_id'];
+        }
         $dir = 'images/' . Str::random() . '/';
         $absolutePath = public_path($dir);
         if (!File::exists($absolutePath)) {
@@ -81,13 +87,13 @@ class ImageManipulationController extends Controller
         $resizedFilename = $filename . '-resized.' . $extension;
         $image->resize($width, $height)->save($absolutePath . $resizedFilename);
 
-        $data['output_path'] = $dir.$resizedFilename;
+        $data['output_path'] = $dir . $resizedFilename;
 
         ImageManipulation::create($data);
 
         return [
             'original' => URL::to($data['path']),
-            'resized' =>  URL::to($data['output_path'])
+            'resized' => URL::to($data['output_path'])
         ];
     }
 
