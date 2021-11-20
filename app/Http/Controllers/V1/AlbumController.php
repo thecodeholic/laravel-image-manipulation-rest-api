@@ -4,7 +4,7 @@ namespace App\Http\Controllers\V1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AlbumRequest;
-use App\Models\V1\Album;
+use App\Models\Album;
 use Illuminate\Http\Request;
 
 class AlbumController extends Controller
