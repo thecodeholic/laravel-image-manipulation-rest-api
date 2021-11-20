@@ -1,7 +1,8 @@
 ## Laravel Image Manipulation REST API
 
 ## Demo
-Coming soon...
+Here is fully working Demo: https://www.lobiimages.com/ <br>
+You have to register first in order to generate access token and make API requests.
 
 ## Prerequisites
 
