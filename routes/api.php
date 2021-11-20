@@ -24,6 +24,7 @@ Route::prefix('v1')->group(function() {
     Route::middleware('auth:sanctum')->group(function () {
         Route::apiResource('album', AlbumController::class);
         Route::get('image', [ImageManipulationController::class, 'index']);
+        Route::get('image/by-album/{album}', [ImageManipulationController::class, 'getByAlbum']);
         Route::post('image/resize', [ImageManipulationController::class, 'resize']);
         Route::delete('image/{image}', [ImageManipulationController::class, 'destroy']);
     });

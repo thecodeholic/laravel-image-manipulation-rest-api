@@ -5,6 +5,7 @@ namespace App\Http\Controllers\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ResizeImageRequest;
 use App\Http\Resources\V1\ImageManipulationResource;
+use App\Models\Album;
 use App\Models\ImageManipulation;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
@@ -23,6 +24,22 @@ class ImageManipulationController extends Controller
     public function index(Request $request)
     {
         return ImageManipulationResource::collection(ImageManipulation::where('user_id', $request->user()->id)->paginate());
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     */
+    public function getByAlbum(Request $request, Album $album)
+    {
+        if ($album->user_id !== $request->user()->id) {
+            return abort(403, 'Unauthorized action.');
+        }
+
+        return ImageManipulationResource::collection(ImageManipulation::where([
+            'user_id' => $request->user()->id,
+            'album_id' => $album->id
+        ])->paginate());
     }
 
     /**
