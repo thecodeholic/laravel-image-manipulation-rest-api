@@ -9,9 +9,9 @@ class ImageManipulation extends Model
 {
     use HasFactory;
 
-    const TYPE_RESIZE = 1;
-    const TYPE_OPTIMIZE = 2;
-    const TYPE_CONVERSION = 3;
+    const TYPE_RESIZE = 'resize';
+    const TYPE_OPTIMIZE = 'optimize';
+    const TYPE_CONVERSION = 'convert';
 
     const UPDATED_AT = null;
 

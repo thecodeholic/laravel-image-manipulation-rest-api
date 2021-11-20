@@ -17,7 +17,7 @@ class CreateImageManipulationsTable extends Migration
             $table->id();
             $table->string('name', 255);
             $table->string('path', 2000);
-            $table->integer('type');
+            $table->string('type', 25);
             $table->text('data');
             $table->string('output_path', 2000)->nullable();
             $table->timestamp('created_at')->nullable();
