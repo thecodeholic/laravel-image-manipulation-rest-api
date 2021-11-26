@@ -1,0 +1,519 @@
+{
+	"info": {
+		"_postman_id": "7551cf0b-73a3-44b0-9b52-fd4ba8d5b3dd",
+		"name": "LobiImages",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Albums",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/album",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"album"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create an album",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Cars\"\r\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/album",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"album"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a single album",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/album/2",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"album",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update an album",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Linux [updated]\"\r\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/album/2",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"album",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete an album",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/album/1",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"album",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Images",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/image",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a single image",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/image/3",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"image",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete an image",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/image/1",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"image",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Images By Album",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/image/by-album/2",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"image",
+						"by-album",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resize image with % (By URL)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"image\": \"https://s3.amazonaws.com/businessinsider.mx/wp-content/uploads/2020/11/15160254/5fb17b20402d49001924f061-GuPn9A.jpeg\"\r\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/image/resize?w=50%",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"image",
+						"resize"
+					],
+					"query": [
+						{
+							"key": "w",
+							"value": "50%"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resize image with px (By URL)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"image\": \"https://s3.amazonaws.com/businessinsider.mx/wp-content/uploads/2020/11/15160254/5fb17b20402d49001924f061-GuPn9A.jpeg\",\r\n    \"album_id\": 2\r\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/image/resize?w=100",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"image",
+						"resize"
+					],
+					"query": [
+						{
+							"key": "w",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resize image with px (By Upload)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Zura/Pictures/5fb17b20402d49001924f061-GuPn9A.jpeg"
+						},
+						{
+							"key": "album_id",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/image/resize?w=1024&h=1024",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"image",
+						"resize"
+					],
+					"query": [
+						{
+							"key": "w",
+							"value": "1024"
+						},
+						{
+							"key": "h",
+							"value": "1024"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resize image with % (By Upload)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Zura/Pictures/Artisio Infrastructure.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v1/image/resize?w=100",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"image",
+						"resize"
+					],
+					"query": [
+						{
+							"key": "w",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:8000"
+		},
+		{
+			"key": "TOKEN",
+			"value": "19|aNppnq7tflO1VxLcEBkQwCTT0H8KDxKeGwHPVPoc"
+		}
+	]
+}
