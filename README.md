@@ -2,7 +2,10 @@
 
 ## Demo
 Here is fully working Demo: https://www.lobiimages.com/ <br>
-You have to register first in order to generate access token and make API requests.
+You have to register first in order to generate access token and make API requests.<br>
+
+#### Test locally
+Download [postman_collection.json](postman_collection.json) file, import it in your postman and test locally.
 
 ## Prerequisites
 
